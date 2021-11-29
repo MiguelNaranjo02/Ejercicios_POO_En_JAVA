@@ -1,0 +1,46 @@
+package notasEstudiantes;
+
+public class Estudiante {
+	private String nombre = "";
+	private String apellido = "";
+	private int codigo;
+	private int par1;
+	private int par2;
+	private int exa;
+	public int getPar1() {
+		return par1;
+	}
+	public void setPar1(int par1) {
+		this.par1 = par1;
+	}
+	public int getPar2() {
+		return par2;
+	}
+	public void setPar2(int par2) {
+		this.par2 = par2;
+	}
+	public int getExa() {
+		return exa;
+	}
+	public void setExa(int exa) {
+		this.exa = exa;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+}

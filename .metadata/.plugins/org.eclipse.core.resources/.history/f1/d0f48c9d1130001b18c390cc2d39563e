@@ -1,0 +1,6 @@
+package contratacionDocentes;
+
+public class Contratacion {
+	ArrayList<String> nombres = new ArrayList<String>();
+
+}

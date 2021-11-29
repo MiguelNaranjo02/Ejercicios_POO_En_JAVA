@@ -1,0 +1,11 @@
+package contratacionDocentes;
+
+public class Planta extends Contratacion{{
+	
+	switch(Contratacion.getEstudios) {
+	case 1:
+		break;
+	}
+	
+}
+}

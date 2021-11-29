@@ -1,0 +1,16 @@
+/*
+	 * Programa: Programa que encripta un mensaje con el metodo Julio Cesar
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  6 de nov de 2020.
+*/
+package encriptaCesar;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class encriptaCesar {
+	public static void main(String Arg[]) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	}
+}

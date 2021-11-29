@@ -1,0 +1,65 @@
+/*
+	 * Programa: Programa que encripta un mensaje con el metodo Julio Cesar
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  6 de nov de 2020.
+*/
+package encriptaCesar;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class encriptaCesar {
+	public static void main(String Arg[]) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String msj = " ";
+		String abc = "abcdefghijklmnñopqrstuvwxyz";
+		char[] abcCarac = abc.toCharArray();
+		int j = 0;
+		int corrimiento;
+		System.out.println("Este programa encripta un mensaje con el metodo Cesar");
+		System.out.print("Ingrese el corrimiento de su preferencia: ");
+		corrimiento = Integer.parseInt(in.readLine());
+		while (corrimiento < 0 || corrimiento >= abcCarac.length) {
+			System.out.println("El corrimiento no puede ser mayor al numero de letras en el alfabeto");
+			System.out.print("Ingrese el corrimiento de su preferencia: ");
+			corrimiento = Integer.parseInt(in.readLine());
+		}
+		System.out.println("Introduzca la palabra a encriptar");
+		msj = (in.readLine());
+		char[] msjCarac = msj.toCharArray();
+
+		for (int i = 0; i < msjCarac.length; i++) {
+			System.out.print(msjCarac[i] + " ");
+		}
+		System.out.println("\n");
+		for (int i = 0; i < msjCarac.length; i++) {
+			if (msjCarac[i] != ' ' && msjCarac[i] != '.' && msjCarac[i] != ',') {
+				j = 0;
+				while (msjCarac[i] != abcCarac[j]
+						&& Character.toUpperCase(msjCarac[i]) != Character.toUpperCase(abcCarac[j])) {
+					j = j + 1;
+
+				}
+				if (j + corrimiento >= abcCarac.length) {
+					int auxCorrimiento = Math.abs(abcCarac.length - j);
+					j = Math.abs(corrimiento - auxCorrimiento);
+				} else {
+					j = j + corrimiento;
+				}
+
+				if (Character.isUpperCase(msjCarac[i])) {
+					msjCarac[i] = Character.toUpperCase(abcCarac[j]);
+
+				} else {
+					msjCarac[i] = abcCarac[j];
+				}
+			}
+
+		}
+		for (int i = 0; i < msjCarac.length; i++) {
+			System.out.print(msjCarac[i] + " ");
+
+		}
+	}
+}

@@ -1,0 +1,8 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Contratacion {
+	protected ArrayList<String> nombres = new ArrayList<String>();
+
+}

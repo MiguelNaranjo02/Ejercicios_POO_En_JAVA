@@ -1,0 +1,42 @@
+/*
+	 * Programa: Plantilla que dibuja distintas figuras
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha: 13 de dic de 2020
+*/
+package moverFigura;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class Dibujador extends JPanel {
+	public Dibujador() {
+
+	}
+
+	public void paintCuadrado(Graphics g, double aux) {// Metodo que dibuja cuadrados
+		int num = (int) aux;
+		super.paintComponent(g);
+		g.setColor(Color.blue);
+		g.fillRect(20, 20, num, num);
+		repaint();
+
+	}
+
+	public void paintCirculo(Graphics g, double aux) {// Metodo que dibuja circulos
+		int num = (int) aux;
+		num = num * 2;
+		if (num > 120) {
+			num = 120;
+		}
+		super.paintComponent(g);
+		g.setColor(Color.red);
+		g.fillOval(20, 20, num, num);
+		repaint();
+
+	}
+
+	
+
+}

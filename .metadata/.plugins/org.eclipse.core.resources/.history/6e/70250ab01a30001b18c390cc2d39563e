@@ -1,0 +1,14 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Planta extends Contratacion{
+	public ArrayList<String> getNombres() {
+		return nombres;
+	}
+	public void setNombres(ArrayList<String> nombres) {
+		this.nombres = nombres;
+	}
+	
+
+}

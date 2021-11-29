@@ -1,0 +1,15 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Contratacion {
+	 ArrayList<String> nombres = new ArrayList<String>();
+	 ArrayList<String> apellidos = new ArrayList<String>();
+	 ArrayList<Double> pago = new ArrayList<Double>();
+	protected double doctorado = 7000000;
+	protected double maestria = 5000000;
+	protected double especializacion = 4000000;
+	protected double sinpostgrado = 3000000;
+	private int estudios=0;
+
+}

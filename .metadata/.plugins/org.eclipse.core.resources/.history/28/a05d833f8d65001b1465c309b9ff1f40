@@ -1,0 +1,25 @@
+import java.util.Random;
+
+public class Manzana {
+	private int ManzanasComidas;
+	int ManX;
+	int ManY;
+	Random random = new Random();
+
+	public void nuevaManzana(int ancho, int alto, int tam) {
+		ManX = random.nextInt((int) (ancho / tam)) * tam;
+		ManY = random.nextInt((int) (alto / tam)) * tam;
+		// Se hace get en el principal
+	}
+
+	public void comprobarManzana(int x[], int y[], int partSerp, int manzanasComidas, int ancho, int alto, int tam) {
+
+		if ((x[0] == ManX) && (y[0] == ManY)) {
+			partSerp++;
+			manzanasComidas++;
+			nuevaManzana(ancho, alto, tam);
+		}
+
+	}
+
+}

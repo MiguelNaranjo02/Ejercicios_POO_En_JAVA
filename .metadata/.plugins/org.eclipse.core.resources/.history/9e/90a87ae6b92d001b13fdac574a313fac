@@ -1,0 +1,11 @@
+package quiz2;
+
+public class Herencia {
+	public static void main( String args[]) {
+		Escritor e = new Escritor();
+		EscritorAmpliado eAmp = new EscritorAmpliado();
+		EscritorMayusculas eMays = new EscritorMayusculas();
+		e.escribe("El primer escritor sabe escribir");
+	}
+
+}

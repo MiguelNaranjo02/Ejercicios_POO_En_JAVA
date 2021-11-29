@@ -1,0 +1,10 @@
+
+public class Manzana {
+	private int ManzanasComidas;
+	int ManX;
+	int ManY;
+	public void nuevaManzana() {
+		
+	}
+
+}

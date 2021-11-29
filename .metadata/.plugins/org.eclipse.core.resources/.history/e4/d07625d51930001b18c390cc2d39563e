@@ -1,0 +1,14 @@
+package contratacionDocentes;
+
+public class Catedratico extends Contratacion{
+	private double cantHoras=0;
+
+	public double getCantHoras() {
+		return cantHoras;
+	}
+
+	public void setCantHoras(double cantHoras) {
+		this.cantHoras = cantHoras;
+	}
+
+}

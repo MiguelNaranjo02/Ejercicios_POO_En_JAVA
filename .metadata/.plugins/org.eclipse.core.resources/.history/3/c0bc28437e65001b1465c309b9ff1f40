@@ -1,0 +1,10 @@
+import javax.swing.JFrame;
+
+public class VentanaJuego extends JFrame {
+	VentanaJuego() {
+		PanelJuego Panel = new PanelJuego();
+		this.add(Panel);
+		this.setTitle("SNAKE");
+	}
+
+}

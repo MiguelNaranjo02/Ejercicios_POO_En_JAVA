@@ -1,0 +1,13 @@
+
+public class Serpiente {
+	public void mover() {
+
+	}
+
+	
+
+	public void comprobarColision() {
+
+	}
+
+}

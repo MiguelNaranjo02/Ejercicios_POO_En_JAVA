@@ -1,0 +1,105 @@
+/*
+	 * Programa: Plantilla que utiliza las notas de 3 estudiantes
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  6 de nov de 2020.
+*/
+package calificacionEstudiantes;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class DatosEstudiante {
+	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	//Inicializacion de variables privadas
+	private String nombre;
+	private String apellido;
+	private String sabanaNotas;
+	private int numEs;
+	//Declaracion y creacion de un arreglo de notas con 4 indices
+	private double notas[] = new double[4];
+	//Metodos getters y setters de las variables privadas
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public int getNumEs() {
+		return numEs;
+	}
+
+	public void setNumEs(int numEs) {
+		this.numEs = numEs;
+	}
+	//Metodo getter y setter del arreglo de notas
+	public double[] getNotas() {
+		return notas;
+	}
+
+	public void setNotas(double[] notas) {
+		this.notas = notas;
+	}
+
+	public void entradaDatos(String nombre, String apellido, int numEs) throws IOException {//Metodo que pide el nombre, apellido, y 3 notas del estudiante
+		System.out.print("Ingrese el nombre del estudiante " + numEs + ": ");
+		this.nombre = (in.readLine());
+		while (this.nombre.isEmpty()) {//Validacion de que el nombre no este vacio
+			System.out.print("Ingrese el nombre del estudiante " + numEs + ": ");
+			this.nombre = (in.readLine());
+
+		}
+		System.out.print("Ingrese el apellido del estudiante " + numEs + ": ");
+		this.apellido = (in.readLine());
+		while (this.apellido.isEmpty()) {
+			System.out.print("Ingrese el apellido del estudiante " + numEs + ": ");
+			this.apellido = (in.readLine());
+
+		}
+		System.out.print("Ingrese la nota 1 del estudiante " + numEs + " correspondiente al 30%: ");
+		notas[0] = Double.parseDouble(in.readLine());
+		while (notas[0] < 0 || notas[0] > 5) {
+			System.out.println("La nota no puede ser mayor a 5.0 y menor que 0.0");
+			System.out.print("Ingrese la nota 1 del estudiante " + numEs + " correspondiente al 30%: ");
+			notas[0] = Double.parseDouble(in.readLine());
+		}
+		System.out.print("Ingrese la nota 2 del estudiante " + numEs + " correspondiente al 30%: ");
+		notas[1] = Double.parseDouble(in.readLine());
+		while (notas[1] < 0.0 || notas[1] > 5.0) {
+			System.out.println("La nota no puede ser mayor a 5.0 y menor que 0.0");
+			System.out.print("Ingrese la nota 2 del estudiante " + numEs + " correspondiente al 30%: ");
+			notas[1] = Double.parseDouble(in.readLine());
+		}
+		System.out.print("Ingrese la nota del examen final del estudiante " + numEs + " correspondiente al 40%: ");
+		notas[2] = Double.parseDouble(in.readLine());
+		while (notas[2] < 0.0 || notas[2] > 5.0) {
+			System.out.println("La nota no puede ser mayor a 5.0 y menor que 0.0");
+			System.out.print("Ingrese la nota del examen final del estudiante " + numEs + " correspondiente al 40%: ");
+			notas[2] = Double.parseDouble(in.readLine());
+		}
+
+	}
+
+	public void calculoNota(double notas[]) {
+		notas[3] = (notas[0] * 0.30) + (notas[1] * 0.30) + (notas[2] * 0.40);
+		notas[3] = Math.round(notas[3] * 100.0) / 100.0; // Redondeo de la nota a dos decimales
+	}
+
+	public String imprimir() {
+		sabanaNotas = "";
+		calculoNota(this.notas);
+		sabanaNotas = "Nota 1: " + notas[0] + "\n" + "Nota 2: " + notas[1] + "\n" + "Examen final: " + notas[2] + "\n"
+				+ "Nota definitiva: " + notas[3];
+		return sabanaNotas;
+	}
+
+}

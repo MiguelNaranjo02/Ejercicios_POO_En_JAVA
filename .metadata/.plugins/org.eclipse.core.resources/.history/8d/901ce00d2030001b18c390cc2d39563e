@@ -1,0 +1,63 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Contratacion {
+	protected ArrayList<String> nombres = new ArrayList<String>();
+	protected ArrayList<String> apellidos = new ArrayList<String>();
+	protected ArrayList<Double> pago = new ArrayList<Double>();
+	protected double doctorado = 7000000;
+	protected double maestria = 5000000;
+	protected double especializacion = 4000000;
+	protected double sinpostgrado = 3000000;
+	 int estudios=0;
+	public ArrayList<String> getNombres() {
+		return nombres;
+	}
+	public void setNombres(ArrayList<String> nombres) {
+		this.nombres = nombres;
+	}
+	public ArrayList<String> getApellidos() {
+		return apellidos;
+	}
+	public void setApellidos(ArrayList<String> apellidos) {
+		this.apellidos = apellidos;
+	}
+	public ArrayList<Double> getPago() {
+		return pago;
+	}
+	public void setPago(ArrayList<Double> pago) {
+		this.pago = pago;
+	}
+	public double getDoctorado() {
+		return doctorado;
+	}
+	public void setDoctorado(double doctorado) {
+		this.doctorado = doctorado;
+	}
+	public double getMaestria() {
+		return maestria;
+	}
+	public void setMaestria(double maestria) {
+		this.maestria = maestria;
+	}
+	public double getEspecializacion() {
+		return especializacion;
+	}
+	public void setEspecializacion(double especializacion) {
+		this.especializacion = especializacion;
+	}
+	public double getSinpostgrado() {
+		return sinpostgrado;
+	}
+	public void setSinpostgrado(double sinpostgrado) {
+		this.sinpostgrado = sinpostgrado;
+	}
+	public int getEstudios() {
+		return estudios;
+	}
+	public void setEstudios(int estudios) {
+		this.estudios = estudios;
+	}
+
+}

@@ -1,0 +1,194 @@
+/*
+	 * Programa: Programa que calcula el salario de docentes
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  25 de nov de 2020.
+*/
+package contratacionDocentes;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+
+public class ContratacionDocentes {
+	  public static String EliminarNotaciónCientifica(double Número) {
+
+	       return new DecimalFormat("#.####################################").format(Número);
+
+	   }
+	public static void main(String Arg[]) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		int numDoc=0;
+		int tipoCont=0;
+		int nivEst=0;
+		int mesHoras=0;
+		int reint;
+		Planta calcPlant = new Planta();
+		VincEspecial calcEspec = new VincEspecial();
+		Catedratico calcCated= new Catedratico();
+		System.out.println("Este programa calcula los valores a pagar a docentes universitarios en un mes determinado");
+		
+		do {
+		System.out.print("Ingrese el numero de docentes a calcular su pago: ");
+		numDoc= Integer.parseInt(in.readLine());
+		while (numDoc<=0) {
+			System.out.println("El numero de docentes debe de ser mayor o igual a 1 ");
+			System.out.print("Ingrese el numero de docentes a calcular su pago: ");
+			numDoc= Integer.parseInt(in.readLine());
+		}
+		for (int i=1;i<numDoc+1;i++) {
+			System.out.println("Seleccione el tipo de contratacion del docente numero "+ i+"\n1.Planta\n2.Vinculacion Especial\n3.Catedratico\n");
+			tipoCont= Integer.parseInt(in.readLine());
+			while ((tipoCont!=1)&&(tipoCont!=2)&&(tipoCont!=3)) {
+				System.out.println("Opcion invalida");
+				System.out.println("Seleccione el tipo de contratacion del docente numero "+ i+"\n1.Planta\n2.Vinculacion Especial\n3.Catedratico\n");
+				tipoCont= Integer.parseInt(in.readLine());
+			}
+			switch(tipoCont) {
+			case 1:
+				System.out.print("Ingrese el nombre del docente numero "+ i+": ");
+				calcPlant.nombres.add(in.readLine());
+				System.out.print("Ingrese el apellido del docente numero "+ i+": ");
+				calcPlant.apellidos.add(in.readLine());
+				System.out.println("Seleccione el nivel de estudios del docente numero "+i+"\n1.Doctorado\n2.Maestria\n3.Especializacion\n4.Sin postgrado");
+				nivEst=Integer.parseInt(in.readLine());
+				while((nivEst!=1)&&(nivEst!=2)&&(nivEst!=3)&&(nivEst!=4)) {
+					System.out.println("Opcion invalida");
+					System.out.println("Seleccione el nivel de estudios del docente numero "+i+"\n1.Doctorado\n2.Maestria\n3.Especializacion\n4.Sin postgrado");
+					nivEst=Integer.parseInt(in.readLine());
+				}
+				calcPlant.nivel.add(nivEst);
+				calcPlant.setEstudios(nivEst);
+				calcPlant.pagoPlanta();
+				break;
+			case 2:
+				System.out.print("Ingrese el nombre del docente numero "+ i+": ");
+				calcEspec.nombres.add(in.readLine());
+				System.out.print("Ingrese el apellido del docente numero "+ i+": ");
+				calcEspec.apellidos.add(in.readLine());
+				System.out.println("Seleccione el nivel de estudios del docente numero "+i+"\n1.Doctorado\n2.Maestria\n3.Especializacion\n4.Sin postgrado");
+				nivEst=Integer.parseInt(in.readLine());
+				while((nivEst!=1)&&(nivEst!=2)&&(nivEst!=3)&&(nivEst!=4)) {
+					System.out.println("Opcion invalida");
+					System.out.println("Seleccione el nivel de estudios del docente numero "+i+"\n1.Doctorado\n2.Maestria\n3.Especializacion\n4.Sin postgrado");
+					nivEst=Integer.parseInt(in.readLine());
+				}
+				calcEspec.nivel.add(nivEst);
+				calcEspec.setEstudios(nivEst);
+				calcEspec.pagoEspecial();
+				break;
+			case 3:
+				System.out.print("Ingrese el nombre del docente numero "+ i+": ");
+				calcCated.nombres.add(in.readLine());
+				System.out.print("Ingrese el apellido del docente numero "+ i+": ");
+				calcCated.apellidos.add(in.readLine());
+				System.out.println("Seleccione el nivel de estudios del docente numero "+i+"\n1.Doctorado\n2.Maestria\n3.Especializacion\n4.Sin postgrado");
+				nivEst=Integer.parseInt(in.readLine());
+				while((nivEst!=1)&&(nivEst!=2)&&(nivEst!=3)&&(nivEst!=4)) {
+					System.out.println("Opcion invalida");
+					System.out.println("Seleccione el nivel de estudios del docente numero "+i+"\n1.Doctorado\n2.Maestria\n3.Especializacion\n4.Sin postgrado");
+					nivEst=Integer.parseInt(in.readLine());
+				}
+				calcCated.nivel.add(nivEst);
+				calcCated.setEstudios(nivEst);
+				System.out.print("Digite la cantidad de horas dictadas al mes por el docente "+i+": ");
+				mesHoras=Integer.parseInt(in.readLine());
+				while(mesHoras<32 || mesHoras>76) {
+					System.out.print("Las cantidad de horas no corresponden a los estatutos, porfavor ingrese una cantidad de horas valida: ");
+					mesHoras=Integer.parseInt(in.readLine());
+				}
+				calcCated.cantHoras.add(mesHoras);
+				calcCated.setHoras(mesHoras);
+				calcCated.pagoCated();
+				break;
+			}
+		}
+		System.out.println("-------------------Docentes de planta---------------------------------");
+		double plantTot=0;
+		for(int i=0;i<calcPlant.nombres.size();i++) {
+			System.out.println(calcPlant.apellidos.get(i)+" "+calcPlant.nombres.get(i));
+			System.out.println("Docente de planta");
+			System.out.print("Nivel de estudios: ");
+			switch(calcPlant.nivel.get(i)) {
+			case 1:System.out.println("Doctorado");
+				break;
+			case 2:System.out.println("Maestria");
+				break;
+			case 3:System.out.println("Especializacion");
+				break;
+			case 4: System.out.println("Sin postgrado");
+				break;
+			}
+			System.out.println("Pago: $"+ Math.round(calcPlant.pago.get(i)*100.0)/100.0);
+			System.out.println("\n");
+			plantTot=plantTot+calcPlant.pago.get(i);
+		}
+		System.out.println("-------------------Docentes de Vinculacion Especial------------------");
+		double especTot=0;
+		for(int i=0;i<calcEspec.nombres.size();i++) {
+			System.out.println(calcEspec.apellidos.get(i)+" "+calcEspec.nombres.get(i));
+			System.out.println("Docente de Vinculacion Especial");
+			System.out.print("Nivel de estudios: ");
+			switch(calcEspec.nivel.get(i)) {
+			case 1:System.out.println("Doctorado");
+				break;
+			case 2:System.out.println("Maestria");
+				break;
+			case 3:System.out.println("Especializacion");
+				break;
+			case 4: System.out.println("Sin postgrado");
+				break;
+			}
+			System.out.println("Pago: $"+ Math.round(calcEspec.pago.get(i)*100.0)/100.0);
+			System.out.println("\n");
+			especTot=especTot+calcEspec.pago.get(i);
+		}
+		System.out.println("-------------------Docentes Catedraticos-----------------------------");
+		double cateTot=0;
+		for(int i=0;i<calcCated.nombres.size();i++) {
+			System.out.println(calcCated.apellidos.get(i)+" "+calcCated.nombres.get(i));
+			
+			System.out.println("Docente Catedratico");
+			System.out.println("Horas dictadas: "+calcCated.cantHoras.get(i));
+			
+			System.out.print("Nivel de estudios: ");
+			switch(calcCated.nivel.get(i)) {
+			case 1:System.out.println("Doctorado");
+				break;
+			case 2:System.out.println("Maestria");
+				break;
+			case 3:System.out.println("Especializacion");
+				break;
+			case 4: System.out.println("Sin postgrado");
+				break;
+			}
+			
+			System.out.println("Pago: $"+ Math.round(calcCated.pago.get(i)*100.0)/100.0);
+			System.out.println("\n");
+			cateTot=cateTot+calcCated.pago.get(i);
+			
+		}
+		System.out.println("-------------------Subtotales------------------");
+		System.out.println("Total del pago a docentes de planta: $"+EliminarNotaciónCientifica(plantTot));
+		System.out.println("Total del pago a docentes de vinculacion especial: $"+EliminarNotaciónCientifica(especTot));
+		System.out.println("Total del pago a docentes catedraticos: $"+EliminarNotaciónCientifica(cateTot));
+		System.out.println("-------------------Total------------------");
+		System.out.println("El pago total a todos los docentes es de: $"+EliminarNotaciónCientifica(plantTot+especTot+cateTot));
+		calcCated.limpiar();
+		calcPlant.limpiar();
+		calcEspec.limpiar();
+		
+		System.out.print("\n");
+		System.out.print("(0.Volver/1.Salir): ");
+		reint = Integer.parseInt(in.readLine());// El usuario ingresa una opción del menú
+		while (reint != 0 && reint != 1) {// Bucle de verificación de que el número corresponda a las opciones del
+											// menú
+			System.out.println("Opción inválida.");
+			System.out.print("(0.Volver/1.Salir): ");
+			reint = Integer.parseInt(in.readLine());
+		}
+		
+	}while (reint == 0);
+	System.out.println("Muchas gracias."); 
+}
+}
+																			

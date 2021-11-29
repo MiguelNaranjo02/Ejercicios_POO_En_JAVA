@@ -1,0 +1,45 @@
+/*
+	 * Programa: Programa que muestra el determinante de una matriz 3x3
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  20 de nov de 2020.
+*/
+package determinante3x3;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Determinante3x3 {
+	public static void main(String Arg[]) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		int opc;
+		int reint;
+		Double matriz[][];
+		matriz= new Double[3][3];
+		
+		System.out.println("Este programa calcula el determinante de una matriz 3x3");
+		do {
+			for (int i=0;i<3;i++) {
+				System.out.println("Ingrese el valor de la posicion"+ i+1+","+"j+1");
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			System.out.print("(0.Volver/1.Salir): ");
+			reint = Integer.parseInt(in.readLine());// El usuario ingresa una opción del menú
+			while (reint != 0 && reint != 1) {// Bucle de verificación de que el número corresponda a las opciones del
+												// menú
+				System.out.println("Opción inválida.");
+				System.out.print("(0.Volver/1.Salir): ");
+				reint = Integer.parseInt(in.readLine());
+			}
+		} while (reint == 0);
+		System.out.println("Muchas gracias.");
+
+		}
+
+}

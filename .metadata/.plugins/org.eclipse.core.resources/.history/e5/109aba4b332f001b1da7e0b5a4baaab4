@@ -1,0 +1,78 @@
+/*
+	 * Programa: Plantilla que calcula la serie de Fibonacci
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  20 de nov de 2020.
+*/
+package fibonacci;
+
+public class FibonacciMet {
+	//Se inicializan las variables privadas
+	private int pos;
+	private int opc;
+	private String suces;
+	//Metodos getters y setters
+	public int getPos() {
+		return pos;
+	}
+	public void setPos(int pos) {
+		this.pos = pos;
+	}
+	public int getOpc() {
+		return opc;
+	}
+	public void setOpc(int opc) {
+		this.opc = opc;
+		//Segun la opcion enviada por el menu
+		if(opc==0) {//Si es igual a 0 se llamara a la funcion recursiva que calcula la sucesion
+			System.out.println(FiboRec(pos));
+		}
+		if(opc==1) {//Si es igual a 1 se llamara a la funcion iterativa que calcula la sucesion
+			System.out.println(SucesIter(pos));
+		}
+	}
+	public String SucesIter(int num) {//Metodo que calcula la sucesion de fibonacci y la retorna en un string
+		int j=1;
+		int k=1;
+		suces="";
+		for (int i=1;i<num-1;i++) {//Se recorren las posiciones de la serie de fibonacci desde 1 hasta el numero en cuestion -1
+			int aux;
+			if (i==1) {
+				suces=suces+j+" "+k+" ";
+			}
+			aux=j+k;
+			j=k;
+			k=aux;
+			
+			suces=suces+aux+" ";
+		}
+		if (num==1) {
+			suces= suces+1;
+		}
+		if ( num==2) {
+			suces=suces+1+" "+1;
+		}
+		
+		return  suces;
+	}
+	
+	public int sucesRec(int num) {
+		if((num==0)||num==1) {
+			return num;
+		}else {
+			return sucesRec(num-1)+sucesRec(num-2);
+		}
+	}
+	
+
+	public String FiboRec(int num) {
+		suces="";
+		for(int i=1;i<num+1;i++) {
+			suces=suces+sucesRec(i)+" ";
+		}
+		return suces;
+		
+		
+	}
+	
+
+}

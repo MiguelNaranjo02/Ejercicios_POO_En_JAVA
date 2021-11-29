@@ -1,0 +1,28 @@
+/*
+	 * Programa: Plantilla que calcula el factorial de un numero
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  20 de nov de 2020.
+*/
+package factorial;
+import java.math.BigInteger;
+
+public class FactorialMet {
+	private int num;
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public BigInteger facto(int num) {
+		if(num.equals(BigInteger.ZERO)) {
+			return 1;
+		}else {
+			return num.multiply(facto(num-1));
+		}
+		
+	}
+
+}

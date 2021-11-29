@@ -1,0 +1,55 @@
+/*
+	 * Programa: Plantilla que verifica si un ID existe
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha: 13 de dic de 2020
+*/
+package maquinaGolosinas;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class IDExis {
+	boolean siEsta = false;
+	List<String> idProd = new ArrayList<String>() {
+		{
+			add("A2");
+			add("A4");
+			add("A8");
+			add("B1");
+			add("B3");
+			add("B6");
+			add("C5");
+			add("C7");
+			add("C9");
+			add("D1");
+			add("D2");
+			add("D4");
+		}
+	};
+	List<String> ProdPrec = new ArrayList<Integer>() {
+		{
+			add(1200);
+			add("A4");
+			add("A8");
+			add("B1");
+			add("B3");
+			add("B6");
+			add("C5");
+			add("C7");
+			add("C9");
+			add("D1");
+			add("D2");
+			add("D4");
+		}
+	};
+
+	public boolean Existe(String id) {
+		if (idProd.contains(id)) {
+			siEsta = true;
+		} else {
+			siEsta = false;
+		}
+		return siEsta;
+	}
+
+}

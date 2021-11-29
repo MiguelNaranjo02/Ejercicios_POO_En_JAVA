@@ -1,0 +1,12 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Catedratico extends Contratacion{
+	ArrayList<Integer> cantHoras = new ArrayList<Integer>();
+
+	
+
+	
+
+}

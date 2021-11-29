@@ -1,0 +1,13 @@
+import java.util.Random;
+
+public class Manzana {
+	private int ManzanasComidas;
+	int ManX;
+	int ManY;
+	Random random= new Random();
+	public void nuevaManzana() {
+		ManX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
+		ManY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+	}
+
+}

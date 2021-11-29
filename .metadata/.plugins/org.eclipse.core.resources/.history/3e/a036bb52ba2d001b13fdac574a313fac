@@ -1,0 +1,5 @@
+package quiz2;
+
+ class EscritorMayusculas extends Escritor{
+
+}

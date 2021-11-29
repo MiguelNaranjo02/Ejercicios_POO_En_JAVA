@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Ejemplo2020/src"/>
+	<classpathentry kind="src" path="Laboratorio No3/src"/>
+	<classpathentry kind="src" path="LaboratorioNo 1/src"/>
+	<classpathentry kind="src" path="LaboratorioNo2/src"/>
+	<classpathentry kind="src" path="LaboratorioNo4/src"/>
+	<classpathentry kind="src" path="LaboratorioNo5/src"/>
+	<classpathentry kind="src" path="LaboratorioNo6/src"/>
+	<classpathentry kind="src" path="LaboratorioNo7/src"/>
+	<classpathentry kind="output" path="Ejemplo2020/bin"/>
+</classpath>

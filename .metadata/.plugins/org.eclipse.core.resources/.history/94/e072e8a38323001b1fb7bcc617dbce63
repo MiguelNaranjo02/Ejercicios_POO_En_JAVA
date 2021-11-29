@@ -1,0 +1,27 @@
+/*
+	 * Programa: Programa que encripta un mensaje con el metodo Julio Cesar
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  6 de nov de 2020.
+*/
+package encriptaCesar;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class encriptaCesar {
+	public static void main(String Arg[]) throws IOException {
+		MetodoJulCesar encriptacion = new MetodoJulCesar();
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String msj="";
+		int corrimiento;
+		System.out.println("Este programa encripta un mensaje con el metodo Cesar");
+		System.out.print("Ingrese el corrimiento de su preferencia: ");
+		corrimiento = Integer.parseInt(in.readLine());
+		while (corrimiento < 0 || corrimiento >= get.abcCarac.length) {
+			System.out.println("El corrimiento no puede ser mayor al numero de letras en el alfabeto");
+			System.out.print("Ingrese el corrimiento de su preferencia: ");
+			corrimiento = Integer.parseInt(in.readLine());
+		}
+	}
+}

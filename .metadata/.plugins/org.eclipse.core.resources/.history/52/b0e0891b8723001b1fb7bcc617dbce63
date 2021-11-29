@@ -1,0 +1,50 @@
+/*
+	 * Programa: Plantilla que encripta un mensaje
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  6 de nov de 2020.
+*/
+package encriptaCesar;
+
+public class MetodoJulCesar {
+	private String abc = "abcdefghijklmnñopqrstuvwxyz";
+	private char[] abcCarac = abc.toCharArray();
+	private String palabraOrg = "";
+	private String palabraEncrip="";
+
+	public String getAbc() {
+		return abc;
+	}
+
+	public void setAbc(String abc) {
+		this.abc = abc;
+	}
+
+	public char[] getAbcCarac() {
+		return abcCarac;
+	}
+
+	public void setAbcCarac(char[] abcCarac) {
+		this.abcCarac = abcCarac;
+	}
+
+	public String palabrachar(char[] msjCarac) {
+
+		for (int i = 0; i < msjCarac.length; i++) {
+			palabraOrg = palabraOrg + msjCarac[i] + " ";
+
+		}
+		return palabraOrg;
+	}
+
+	public void encriptacion(char[] msjCarac){
+		for (int i = 0; i < msjCarac.length; i++) {
+			
+		
+		}
+	}
+		for (int i = 0; i < msjCarac.length; i++) {
+			palabraEncrip= palabraEncrip+msjCarac[i] + " ";		
+	}
+	return palabraEncrip;
+
+}

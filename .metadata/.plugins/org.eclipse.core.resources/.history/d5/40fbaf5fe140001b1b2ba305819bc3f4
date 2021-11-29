@@ -1,0 +1,128 @@
+package moverFigura;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Grafico1 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+
+	private int colu;
+	private int fil;
+	private int num;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Grafico1 frame = new Grafico1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public Grafico1() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		String[] fig= {"Esfera","Circulo","Cuadrado"};
+		
+		JComboBox Figuras = new JComboBox(fig);
+		Figuras.setMaximumRowCount(3);
+		Figuras.setBounds(28, 11, 80, 22);
+		Figuras.setSelectedIndex(-1);
+		num=1;
+		contentPane.add(Figuras);
+
+		JButton Left = new JButton("Izquierda");
+		Left.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				colu = colu - 10;
+				repaint();
+			}
+		});
+		Left.setBounds(286, 482, 89, 23);
+		contentPane.add(Left);
+
+		JButton Right = new JButton("Derecha");
+		Right.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				colu = colu + 10;
+				repaint();
+			}
+		});
+		Right.setBounds(385, 482, 89, 23);
+		contentPane.add(Right);
+		
+		JButton Up = new JButton("Arriba");
+		Up.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				fil=fil-10;
+				repaint();
+			}
+		});
+		Up.setBounds(336, 454, 89, 23);
+		contentPane.add(Up);
+		
+		JButton Down = new JButton("Abajo");
+		Down.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				fil=fil+10;
+				repaint();
+			}
+		});
+		Down.setBounds(336, 516, 89, 23);
+		contentPane.add(Down);
+		setBounds(0, 0, 800, 600);
+		colu = 320;
+		fil=250;
+	}
+
+	public void paint(Graphics g,int num) {
+		super.paint(g);
+		
+		if(colu==0) {
+			colu=10;
+		}
+		if(colu==700) {
+			colu=690;
+		}
+		if(fil==30) {
+			fil=40;
+		}
+		if(fil==380) {
+			fil=370;
+		}
+		if(num==1) {
+		g.setColor(Color.blue);
+		g.fillOval(colu, fil, 100, 100);
+		
+		}
+		if(num==2) {
+			g.setColor(Color.red);
+			g.fillRect(colu, fil, 100, 100);
+		}
+	}
+
+}

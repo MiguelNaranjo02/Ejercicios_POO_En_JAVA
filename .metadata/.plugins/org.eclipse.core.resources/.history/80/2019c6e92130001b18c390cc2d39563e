@@ -1,0 +1,18 @@
+package contratacionDocentes;
+
+public class Planta extends Contratacion{{
+
+	switch(estudios) {
+	case 1:
+		pago.add(doctorado);
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	}
+	
+}
+}

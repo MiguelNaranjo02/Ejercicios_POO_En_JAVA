@@ -1,0 +1,7 @@
+package ejemploArrayList;
+import java.util.ArrayList;
+
+public class MetodosArray {
+	Arraylist<tipo_dato> nombre_Array_List = new ArrayList();
+
+}

@@ -1,0 +1,82 @@
+package moverFigura;
+
+import java.awt.EventQueue;
+
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+
+public class PantallaPrincipal extends JFrame {
+
+	private JPanel contentPane;
+	Dibujador Dibuja = new Dibujador();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PantallaPrincipal frame = new PantallaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public PantallaPrincipal() {
+		getContentPane().setLayout(null);
+		
+		
+		setTitle("MOVER FIGURA");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 500, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		String[] fig= {"Esfera","Circulo","Cuadrado"};
+		JComboBox Figuras = new JComboBox(fig);
+		Figuras.setMaximumRowCount(3);
+		Figuras.setBounds(28, 11, 80, 22);
+		Figuras.setSelectedIndex(-1);;
+		contentPane.add(Figuras);
+		
+		JLabel Lienzo = new JLabel("");
+		Lienzo.setBounds(21, 44, 432, 333);
+		contentPane.add(Lienzo);
+		
+		JButton btnEnviar = new JButton("Cambiar figura");
+		btnEnviar.setForeground(new Color(50, 205, 50));
+		btnEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(Figuras.getSelectedIndex()==1) {
+					
+					Dibuja.paintCirculo(Lienzo.getGraphics(),50);
+					repaint();
+				}else {
+					if(Figuras.getSelectedIndex()==2){
+						Dibuja.paintCuadrado(Lienzo.getGraphics(),50);	
+						repaint();
+					}
+				}
+				
+			}
+		});
+		btnEnviar.setBounds(125, 11, 138, 23);
+		contentPane.add(btnEnviar);
+	}
+}

@@ -1,0 +1,45 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Catedratico extends Contratacion{
+	ArrayList<Integer> cantHoras = new ArrayList<Integer>();
+	private int horas=0;
+	
+
+	public int getHoras() {
+		return horas;
+	}
+
+	public void setHoras(int horas) {
+		this.horas = horas;
+	}
+
+	public ArrayList<Integer> getCantHoras() {
+		return cantHoras;
+	}
+
+	public void setCantHoras(ArrayList<Integer> cantHoras) {
+		this.cantHoras = cantHoras;
+	}
+	public void pagoCated() {
+	switch(estudios) {
+	case 1:
+		pago.add(((doctorado/30)/10)*);
+		break;
+	case 2:
+		pago.add((maestria*85)/100);
+		break;
+	case 3:
+		pago.add((especializacion*85)/100);
+		break;
+	case 4:
+		pago.add((sinPostGrado*85)/100);
+		break;
+	}
+
+}
+
+	
+
+}

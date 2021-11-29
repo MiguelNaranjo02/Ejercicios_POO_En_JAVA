@@ -1,0 +1,10 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Catedratico extends Contratacion{
+	private ArrayList<Double> cantHoras = new ArrayList<Double>();
+
+	
+
+}

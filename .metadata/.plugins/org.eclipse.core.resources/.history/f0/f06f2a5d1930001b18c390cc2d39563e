@@ -1,0 +1,6 @@
+package contratacionDocentes;
+
+public class Catedratico extends Contratacion{
+	private double cantHoras=0;
+
+}

@@ -1,0 +1,67 @@
+/*
+	 * Programa: Plantilla que calcula el área de cualquier triángulo
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  30 de oct de 2020.
+*/
+package dibujoFiguras;
+
+public class CalculoArea {
+	//Inicialización de variables privadas
+	private double lad1;
+	private double lad2;
+	private double lad3;
+	private double area;
+	private boolean triang = false;
+
+	public double getLad1() {//Método getter del lado 1
+		return lad1;
+	}
+
+	public void setLad1(double lad1) {//Método setter del lado 1
+		this.lad1 = lad1;
+	}
+
+	public double getLad2() {//Método getter del lado 2
+		return lad2;
+	}
+
+	public void setLad2(double lad2) {//Método setter del lado 2
+		this.lad2 = lad2;
+	}
+
+	public double getLad3() {//Método getter del lado 3
+		return lad3;
+	}
+
+	public void setLad3(double lad3) {//Método setter del lado 3
+		this.lad3 = lad3;
+	}
+
+	public boolean esTriang() {//Método que verifica si un triángulo existe a partir de la medida de sus lados
+		if ((this.lad1 + this.lad2 > this.lad3)  && (this.lad1 + this.lad3 > this.lad2) && (this.lad2 + this.lad3 > this.lad1)) {
+					triang = true;
+				}else {
+					triang=false;
+				}
+		return triang;
+	}
+
+	public void calArea() {//Método que calcula el área de un triángulo a partir de sus 3 lados
+		double semi = (this.lad1 + this.lad2 + this.lad3) / 2;
+		this.area = semi * (semi - this.lad1) * (semi - this.lad2) * (semi - this.lad3);
+		this.area = Math.sqrt(this.area);
+		this.area = Math.round(this.area * 100.0) / 100.0;
+
+	}
+
+	public double getArea() {//Método getter del área
+		calArea();
+		return this.area;
+	}
+
+	public void setArea(double area) {//Método setter del área
+		this.area = area;
+	}
+
+}
+

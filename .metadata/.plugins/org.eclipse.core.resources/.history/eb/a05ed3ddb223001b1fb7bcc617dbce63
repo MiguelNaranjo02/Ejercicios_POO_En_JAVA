@@ -1,0 +1,32 @@
+/*
+	 * Programa: Programa que muestra las notas finales de 3 estudiantes
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  6 de nov de 2020.
+*/
+package calificacionEstudiantes;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class CalificacionEstudiantes {
+	public static void main(String Arg[]) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String nombre = "";
+		String apellido = "";
+		double def;
+
+		DatosEstudiante Est1 = new DatosEstudiante();
+		DatosEstudiante Est2 = new DatosEstudiante();
+		DatosEstudiante Est3 = new DatosEstudiante();
+		Est1.entradaDatos(nombre, apellido, 1);
+		Est2.entradaDatos(nombre, apellido, 2);
+		Est3.entradaDatos(nombre, apellido, 3);
+		System.out.println("Apellido	Nombre	Nota 1	Nota 2	Examen Final	Nota definitiva");
+		System.out.println(Est1.getApellido() + "	" + Est1.getNombre() + "	" + Est1.imprimir());
+		System.out.println(Est2.getApellido() + "	" + Est2.getNombre() + "	" + Est2.imprimir());
+		System.out.println(Est3.getApellido() + "	" + Est3.getNombre() + "	" + Est3.imprimir());
+		def = (Est1.getNotas()[3] + Est2.getNotas()[3] + Est3.getNotas()[3]) / 3;
+		System.out.println("La definitiva del grupo es de: " + def);
+	}
+}

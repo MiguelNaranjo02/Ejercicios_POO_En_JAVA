@@ -1,0 +1,21 @@
+package contratacionDocentes;
+
+public class VincEspecial extends Contratacion{
+	{
+	switch(estudios) {
+	case 1:
+		pago.add((doctorado*85)/100);
+		break;
+	case 2:
+		pago.add((maestria*85)/100);
+		break;
+	case 3:
+		pago.add(especializacion);
+		break;
+	case 4:
+		pago.add(sinPostGrado);
+		break;
+	}
+
+}
+	}

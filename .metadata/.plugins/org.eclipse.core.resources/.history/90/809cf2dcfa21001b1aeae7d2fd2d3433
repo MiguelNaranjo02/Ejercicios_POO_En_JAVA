@@ -1,0 +1,51 @@
+package ejemploArrayList;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+public class EjemploArrayList {
+	public static void main(String Arg[]) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		ArrayList<String> listaInvt = new ArrayList<String> ();
+		int nuevoDato=1;
+		int opc=0;
+		System.out.println("Ingrese la lista de invitados");
+		do {
+			listaInvt.add(in.readLine());
+			System.out.println("Si quiere ingresar otro invitado presione 1, si quiere dejar la lista asi presione 0");
+			nuevoDato= Integer.parseInt(in.readLine());
+		}while(nuevoDato==1);
+		System.out.println("La lista de invitados es:");
+		for (int i=0; i<listaInvt.size();i++) {
+			System.out.println(listaInvt.get(i));
+		}
+		System.out.println("Seleccione la opcion que quiera hacer con la lista");
+		System.out.println("1. Añadir otro invitado");
+		System.out.println("2. Revisar si hay un invitado");
+		System.out.println("3. Revisar cuantos invitados hay");
+		System.out.println("4. Borrar un invitado de la lista de invitados");
+		opc= Integer.parseInt(in.readLine());
+		switch (opc){
+			case 1:
+				System.out.println("Ingrese el nombre del invitado");
+				listaInvt.add(in.readLine());
+			case 2:
+				System.out.println("Ingrese el nombre de la persona a buscar");
+				String nombre= (in.readLine());
+				if (listaInvt.contains(nombre)) {
+					System.out.println(nombre+" si esta en la lista");
+				}else {
+					System.out.println(nombre+ " no esta en la lista");
+				}
+			case 3:
+				System.out.println("El numero de invitados es: "+ listaInvt.size());
+			case 4:
+			case 5:
+		}
+		
+		
+		
+	
+	}
+}

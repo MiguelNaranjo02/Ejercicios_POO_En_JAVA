@@ -1,0 +1,10 @@
+/*
+	 * Programa: Programa que muestra el factorial de un numero
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  20 de nov de 2020.
+*/
+package determinante3x3;
+
+public class Determinante3x3 {
+
+}

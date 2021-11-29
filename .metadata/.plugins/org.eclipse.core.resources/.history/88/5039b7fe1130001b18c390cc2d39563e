@@ -1,0 +1,10 @@
+package contratacionDocentes;
+
+import java.util.ArrayList;
+
+public class Contratacion {
+	protected ArrayList<String> nombres = new ArrayList<String>();
+	protected ArrayList<String> apellidos = new ArrayList<String>();
+	protected ArrayList<Double> pago = new ArrayList<Double>();
+
+}

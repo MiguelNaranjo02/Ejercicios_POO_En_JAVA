@@ -1,0 +1,25 @@
+package LoQueSea;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class aaaa {
+	public static void main(String Arg[]) throws IOException {
+	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	int[][] tabla= new int [4][3];
+	for(int i=0;i<tabla.length;i++) {
+		for(int j=0;j<tabla[i].length;j++) {
+			tabla[i][j]=i*j;
+		}
+	}
+	for(int i=0;i<tabla.length;i++) {
+		for(int j=0;j<tabla[i].length;j++) {
+			System.out.print(tabla[i][j]+"");
+		}
+		System.out.println("");
+	}
+	
+		
+	}
+}

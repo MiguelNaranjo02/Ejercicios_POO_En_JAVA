@@ -1,0 +1,92 @@
+/*
+	 * Programa: Plantilla que encripta un mensaje
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha:  6 de nov de 2020.
+*/
+package encriptaCesar;
+
+public class MetodoJulCesar {
+	//Inicializacion de variables privadas
+	private String abc = "abcdefghijklmnñopqrstuvwxyz";
+	private char[] abcCarac = abc.toCharArray();
+	private String palabraOrg = "";
+	private String palabraEncrip = "";
+
+	public String getAbc() {//Metodo getter del abecedario
+		return abc;
+	}
+
+	public void setAbc(String abc) {//Metodo setter del abecedario
+		this.abc = abc;
+	}
+
+	public char[] getAbcCarac() {//Metodo getter del arreglo de caracteres del abecedario
+		return abcCarac;
+	}
+
+	public String getPalabraOrg() {//Metodo getter del String que contiene la palabra original en caracteres
+		return palabraOrg;
+	}
+
+	public void setPalabraOrg(String palabraOrg) {//Metodo setter del String ue contiene la palabra original en caracteres
+		this.palabraOrg = palabraOrg;
+	}
+
+	public String getPalabraEncrip() {//Metodo getter de la palabra encriptada en caracteres
+		return palabraEncrip;
+	}
+
+	public void setPalabraEncrip(String palabraEncrip) {//Metodo setter de la palabra encriptada
+		this.palabraEncrip = palabraEncrip;
+	}
+
+	public void setAbcCarac(char[] abcCarac) {
+		this.abcCarac = abcCarac;
+	}
+
+	public String palabrachar(char[] msjCarac) {
+		palabraOrg="";
+
+		for (int posArrPal = 0; posArrPal < msjCarac.length; posArrPal++) {
+			palabraOrg = palabraOrg + msjCarac[posArrPal] + " ";
+
+		}
+		return palabraOrg;
+	}
+
+	public void encriptacion(char[] msjCarac, int corrimiento) {
+		for (int posArrPal = 0; posArrPal < msjCarac.length; posArrPal++) {
+			if (msjCarac[posArrPal] != ' ' && msjCarac[posArrPal] != '.' && msjCarac[posArrPal] != ',') {
+				int posArrAbc = 0;
+				while (msjCarac[posArrPal] != abcCarac[posArrAbc]
+						&& Character.toUpperCase(msjCarac[posArrPal]) != Character.toUpperCase(abcCarac[posArrAbc])) {
+					posArrAbc = posArrAbc + 1;
+
+				}
+				if (posArrAbc + corrimiento >= abcCarac.length) {
+					int auxCorrimiento = Math.abs(abcCarac.length - posArrAbc);
+					posArrAbc = Math.abs(corrimiento - auxCorrimiento);
+				} else {
+					posArrAbc = posArrAbc + corrimiento;
+				}
+
+				if (Character.isUpperCase(msjCarac[posArrPal])) {
+					msjCarac[posArrPal] = Character.toUpperCase(abcCarac[posArrAbc]);
+
+				} else {
+					msjCarac[posArrPal] = abcCarac[posArrAbc];
+				}
+			}
+
+		}
+	}
+	public String retoEncript(char[] msjCarac, int corrimiento) {
+		encriptacion(msjCarac, corrimiento);
+		for (int posArrPal = 0; posArrPal < msjCarac.length; posArrPal++) {
+			System.out.print(msjCarac[posArrPal] + " ");
+		}
+		
+		return palabraEncrip;
+	}
+
+}

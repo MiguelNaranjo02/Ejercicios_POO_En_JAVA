@@ -1,0 +1,17 @@
+/*
+	 * Programa: Plantilla que verifica si un ID existe
+	 * Autor: Miguel Angel Naranjo Joya.
+	 * Fecha: 13 de dic de 2020
+*/
+package maquinaGolosinas;
+
+import java.util.ArrayList;
+
+public class IDExis {
+
+	private ArrayList<String> IdProd= new ArrayList<String>();
+	public IDExis() {
+		IdProd.add("A");
+	}
+
+}

@@ -1,0 +1,11 @@
+package LoQueSea;
+
+public class aaaa {
+	String[][] nombres= {{"sr. ","sra.","Srta. "},{"Smith","Jones"}};
+	System.out.println(nombres[0][0]+nombres[1][0]);
+	System.out.println(nombres[0][2]+nombres[1][1]);
+	
+		
+	
+
+}
